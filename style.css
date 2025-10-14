@@ -1,25 +1,49 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffebee; /* ชมพูอ่อนหวาน */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
+    color: #ad1457; /* ชมพูเข้มสำหรับ text */
 }
 
 .container {
     text-align: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); /* ชมพู shadow */
     max-width: 600px;
     width: 100%;
+    z-index: 1;
 }
 
-h1 {
-    color: #333;
+.wedding-info {
+    margin-bottom: 20px;
+}
+
+.wedding-info h1 {
+    font-size: 24px;
+    color: #d81b60; /* ชมพูสด */
+}
+
+.wedding-info h2 {
+    font-size: 36px;
+    color: #c2185b;
+    margin: 0;
+}
+
+.wedding-info p {
+    font-size: 20px;
+    color: #e91e63;
+    margin: 5px 0;
+}
+
+.heart {
+    color: #ff1744; /* หัวใจแดงสด */
 }
 
 label {
@@ -33,6 +57,8 @@ input {
     font-size: 16px;
     width: 200px;
     margin-bottom: 20px;
+    border: 1px solid #f48fb1; /* ชมพู border */
+    border-radius: 5px;
 }
 
 .digits-container {
@@ -44,9 +70,9 @@ input {
 .digit {
     font-size: 48px;
     font-weight: bold;
-    color: #FF0000;
+    color: #ff4081; /* ชมพูสดสำหรับ digits */
     background-color: #fff;
-    border: 2px solid #ccc;
+    border: 2px solid #f8bbd0;
     border-radius: 5px;
     width: 60px;
     height: 60px;
@@ -69,7 +95,7 @@ input {
 button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #4CAF50;
+    background-color: #ec407a; /* ชมพู button */
     color: white;
     border: none;
     border-radius: 5px;
@@ -78,12 +104,12 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #d81b60;
 }
 
 #message {
     font-size: 18px;
-    color: #333;
+    color: #ad1457;
     margin-top: 20px;
 }
 
@@ -93,7 +119,7 @@ button:hover {
 
 .winners-board h2 {
     font-size: 20px;
-    color: #333;
+    color: #c2185b;
 }
 
 #winnersList {
@@ -103,9 +129,39 @@ button:hover {
 
 #winnersList li {
     font-size: 18px;
-    color: #0066cc;
+    color: #e91e63;
     margin: 5px 0;
     padding: 5px;
-    background-color: #f9f9f9;
+    background-color: #fce4ec;
     border-radius: 5px;
+}
+
+/* หัวใจลอยขึ้นมา */
+.hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.heart-particle {
+    position: absolute;
+    font-size: 24px;
+    color: #ff1744;
+    animation: float 5s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
 }
