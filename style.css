@@ -14,6 +14,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
 }
 
 h1 {
@@ -52,7 +54,7 @@ input {
     align-items: center;
     justify-content: center;
     margin: 0 5px;
-    perspective: 1000px; /* สำหรับ 3D animation */
+    perspective: 1000px;
 }
 
 .spinning {
@@ -83,4 +85,27 @@ button:hover {
     font-size: 18px;
     color: #333;
     margin-top: 20px;
+}
+
+.winners-board {
+    margin-top: 20px;
+}
+
+.winners-board h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+#winnersList {
+    list-style: none;
+    padding: 0;
+}
+
+#winnersList li {
+    font-size: 18px;
+    color: #0066cc;
+    margin: 5px 0;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
 }
