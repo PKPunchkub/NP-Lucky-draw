@@ -20,17 +20,39 @@ h1 {
     color: #333;
 }
 
-.number-display {
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.digits-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.digit {
     font-size: 48px;
     font-weight: bold;
     color: #FF0000;
-    margin: 20px 0;
-    padding: 10px;
+    background-color: #fff;
     border: 2px solid #ccc;
     border-radius: 5px;
-    width: 150px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    perspective: 1000px; /* สำหรับ 3D animation */
 }
 
 .spinning {
@@ -38,8 +60,8 @@ h1 {
 }
 
 @keyframes spin {
-    0% { transform: rotateX(0deg); }
-    100% { transform: rotateX(360deg); }
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
 }
 
 button {
