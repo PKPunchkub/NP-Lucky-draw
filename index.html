@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เกมสุ่มเลข Lotto 001-500</title>
+    <title>เกมสุ่มเลข Lotto 001-Max</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>เกมสุ่มเลข Lotto</h1>
-        <p>สุ่มเลข 001-500 เพื่อหาผู้โชคดี!</p>
-        <div class="number-display">000</div>
+        <p>สุ่มเลข 001 ถึง Max เพื่อหาผู้โชคดี!</p>
+        <label for="maxInput">กำหนดจำนวนสูงสุด (เช่น จำนวนแขก):</label>
+        <input type="number" id="maxInput" value="500" min="1" max="999">
+        <div class="digits-container">
+            <span class="digit">0</span>
+            <span class="digit">0</span>
+            <span class="digit">0</span>
+        </div>
         <button id="drawBtn">เริ่มหมุน!</button>
         <button id="restartBtn" style="display: none;">เริ่มใหม่</button>
         <p id="message"></p>
