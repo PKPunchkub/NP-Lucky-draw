@@ -4,69 +4,106 @@ const digits = document.querySelectorAll('.digit');
 const drawBtn = document.getElementById('drawBtn');
 const restartBtn = document.getElementById('restartBtn');
 const message = document.getElementById('message');
+const winnersList = document.getElementById('winnersList');
 
-// ฟังก์ชัน format เลขเป็น 3 หลัก (001-999)
-function formatNumber(num) {
-    return num.toString().padStart(3, '0');
-}
+// ตัวแปรเก็บสถานะและเลขผู้โชคดี
+let winners = [];
+let isDrawing = false;
+let drawCount = 0;
+const maxWinners = 10;
 
-// ฟังก์ชันสุ่มเลขตาม max
+// ฟังก์ชันสุ่มตัวเลขที่ไม่ซ้ำ
 function getRandomNumber(max) {
-    return Math.floor(Math.random() * max) + 1;
+    let num;
+    do {
+        num = Math.floor(Math.random() * max) + 1;
+        num = num.toString().padStart(3, '0'); // แปลงเป็น 3 หลัก
+    } while (winners.includes(num));
+    return num;
 }
 
-// Event เมื่อกดปุ่มเริ่มหมุน
-drawBtn.addEventListener('click', function() {
-    const max = parseInt(maxInput.value) || 500;
-    if (max < 1 || max > 999) {
-        message.textContent = 'กรุณาใส่จำนวนสูงสุดระหว่าง 1-999!';
+// ฟังก์ชันหมุนตัวเลขทีละหลัก
+function spinDigit(digitElement, targetDigit, duration, callback) {
+    let startTime = null;
+    const spin = (timestamp) => {
+        if (!startTime) startTime = timestamp;
+        const progress = (timestamp - startTime) / duration;
+        if (progress < 1) {
+            digitElement.textContent = Math.floor(Math.random() * 10);
+            digitElement.classList.add('spinning');
+            requestAnimationFrame(spin);
+        } else {
+            digitElement.textContent = targetDigit;
+            digitElement.classList.remove('spinning');
+            callback();
+        }
+    };
+    requestAnimationFrame(spin);
+}
+
+// ฟังก์ชันเริ่มการสุ่ม
+function startDraw() {
+    if (isDrawing) return;
+    isDrawing = true;
+    drawBtn.disabled = true;
+
+    const max = parseInt(maxInput.value);
+    if (isNaN(max) || max < 10 || max > 999) {
+        message.textContent = 'กรุณากรอกจำนวนสูงสุดระหว่าง 10 ถึง 999';
+        isDrawing = false;
+        drawBtn.disabled = false;
         return;
     }
-    maxInput.disabled = true; // ล็อก input หลังเริ่ม
-    drawBtn.style.display = 'none';
-    message.textContent = 'กำลังหมุน...';
 
-    const luckyNumber = getRandomNumber(max);
-    const luckyDigits = formatNumber(luckyNumber).split(''); // แยกเป็น array ['1', '2', '3']
-
-    // เริ่มหมุนทั้งหมด
-    digits.forEach(digit => digit.classList.add('spinning'));
-
-    // Simulate หมุนเร็วๆ
-    const spinInterval = setInterval(function() {
-        digits.forEach((digit, index) => {
-            if (digit.classList.contains('spinning')) {
-                digit.textContent = Math.floor(Math.random() * 10); // สุ่ม 0-9 สำหรับแต่ละหลัก
-            }
-        });
-    }, 50); // เปลี่ยนเร็วทุก 50ms
-
-    // หยุดทีละหลัก: หลักแรกหลัง 2 วินาที, ถัดไป +1 วินาที
-    setTimeout(() => stopDigit(0, luckyDigits[0], spinInterval), 2000);
-    setTimeout(() => stopDigit(1, luckyDigits[1], spinInterval), 3000);
-    setTimeout(() => stopDigit(2, luckyDigits[2], spinInterval), 4000);
-});
-
-// ฟังก์ชันหยุดหลักเฉพาะ (และตรวจว่าหยุดหมดแล้วประกาศผล)
-function stopDigit(index, finalValue, spinInterval) {
-    digits[index].classList.remove('spinning');
-    digits[index].textContent = finalValue;
-
-    // ถ้าหยุดหมดทุกหลัก
-    if (!Array.from(digits).some(d => d.classList.contains('spinning'))) {
-        clearInterval(spinInterval);
-        message.textContent = `เลขผู้โชคดีคือ ${Array.from(digits).map(d => d.textContent).join('')}!`;
-        restartBtn.style.display = 'inline-block';
+    if (drawCount >= maxWinners) {
+        message.textContent = 'ครบ 10 ผู้โชคดีแล้ว!';
+        isDrawing = false;
+        restartBtn.style.display = 'inline';
+        return;
     }
+
+    const number = getRandomNumber(max);
+    winners.push(number);
+    drawCount++;
+
+    const digitsArray = number.split('');
+    message.textContent = `กำลังสุ่มผู้โชคดีคนที่ ${drawCount}...`;
+
+    spinDigit(digits[0], digitsArray[0], 1000, () => {
+        spinDigit(digits[1], digitsArray[1], 1000, () => {
+            spinDigit(digits[2], digitsArray[2], 1000, () => {
+                message.textContent = `ผู้โชคดีคนที่ ${drawCount}: ${number}`;
+                const li = document.createElement('li');
+                li.textContent = `คนที่ ${drawCount}: ${number}`;
+                winnersList.appendChild(li);
+                isDrawing = false;
+                drawBtn.disabled = false;
+                if (drawCount === maxWinners) {
+                    drawBtn.style.display = 'none';
+                    restartBtn.style.display = 'inline';
+                    message.textContent += ' - ครบ 10 ผู้โชคดี!';
+                }
+            });
+        });
+    });
 }
 
-// Event เมื่อกดปุ่มเริ่มใหม่
-restartBtn.addEventListener('click', function() {
+// ฟังก์ชันรีเซ็ต
+function restartGame() {
+    winners = [];
+    drawCount = 0;
+    isDrawing = false;
+    drawBtn.disabled = false;
+    drawBtn.style.display = 'inline';
     restartBtn.style.display = 'none';
-    drawBtn.style.display = 'inline-block';
-    maxInput.disabled = false;
     message.textContent = '';
+    winnersList.innerHTML = '';
     digits.forEach(digit => {
         digit.textContent = '0';
+        digit.classList.remove('spinning');
     });
-});
+}
+
+// Event listeners
+drawBtn.addEventListener('click', startDraw);
+restartBtn.addEventListener('click', restartGame);
