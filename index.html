@@ -9,9 +9,9 @@
 <body>
     <div class="container">
         <h1>เกมสุ่มเลข Lotto</h1>
-        <p>สุ่มเลข 001 ถึง Max เพื่อหาผู้โชคดี!</p>
+        <p>สุ่มเลข 001 ถึง Max เพื่อหาผู้โชคดี 10 คน!</p>
         <label for="maxInput">กำหนดจำนวนสูงสุด (เช่น จำนวนแขก):</label>
-        <input type="number" id="maxInput" value="500" min="1" max="999">
+        <input type="number" id="maxInput" value="500" min="10" max="999">
         <div class="digits-container">
             <span class="digit">0</span>
             <span class="digit">0</span>
@@ -20,6 +20,10 @@
         <button id="drawBtn">เริ่มหมุน!</button>
         <button id="restartBtn" style="display: none;">เริ่มใหม่</button>
         <p id="message"></p>
+        <div class="winners-board">
+            <h2>บอร์ดผู้โชคดี</h2>
+            <ul id="winnersList"></ul>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
