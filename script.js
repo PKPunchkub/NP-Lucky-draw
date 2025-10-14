@@ -5,6 +5,7 @@ const drawBtn = document.getElementById('drawBtn');
 const restartBtn = document.getElementById('restartBtn');
 const message = document.getElementById('message');
 const winnersList = document.getElementById('winnersList');
+const heartsContainer = document.querySelector('.hearts-container');
 
 // ตัวแปรเก็บสถานะและเลขผู้โชคดี
 let winners = [];
@@ -41,6 +42,17 @@ function spinDigit(digitElement, targetDigit, duration, callback) {
     requestAnimationFrame(spin);
 }
 
+// ฟังก์ชันสร้างหัวใจลอย
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart-particle');
+    heart.textContent = '❤️';
+    heart.style.left = `${Math.random() * 100}vw`;
+    heart.style.animationDuration = `${Math.random() * 3 + 3}s`; // 3-6 วินาที
+    heartsContainer.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}
+
 // ฟังก์ชันเริ่มการสุ่ม
 function startDraw() {
     if (isDrawing) return;
@@ -70,8 +82,11 @@ function startDraw() {
     message.textContent = `กำลังสุ่มผู้โชคดีคนที่ ${drawCount}...`;
 
     spinDigit(digits[0], digitsArray[0], 1000, () => {
+        createHeart(); // หัวใจลอยเมื่อหลักแรกหยุด
         spinDigit(digits[1], digitsArray[1], 1000, () => {
+            createHeart();
             spinDigit(digits[2], digitsArray[2], 1000, () => {
+                createHeart();
                 message.textContent = `ผู้โชคดีคนที่ ${drawCount}: ${number}`;
                 const li = document.createElement('li');
                 li.textContent = `คนที่ ${drawCount}: ${number}`;
@@ -103,6 +118,9 @@ function restartGame() {
         digit.classList.remove('spinning');
     });
 }
+
+// สร้างหัวใจลอยแบบสุ่มทุก 500ms เพื่อ background
+setInterval(createHeart, 500);
 
 // Event listeners
 drawBtn.addEventListener('click', startDraw);
