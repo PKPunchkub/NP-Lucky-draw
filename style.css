@@ -1,5 +1,5 @@
 body {
-    font-family: 'UID ไอติม', sans-serif;
+    font-family: 'Amoresa', sans-serif;
     background-color: #ffebee; /* ชมพูอ่อนหวาน */
     display: flex;
     justify-content: center;
@@ -13,31 +13,31 @@ body {
 .container {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); /* ชมพู shadow */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5); /* ชมพู shadow */
     max-width: 600px;
     width: 100%;
     z-index: 1;
 }
 
 .wedding-info {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .wedding-info h1 {
-    font-size: 32px;
+    font-size: 26px;
     color: #d81b60; /* ชมพูสด */
 }
 
 .wedding-info h2 {
-    font-size: 42px;
+    font-size: 32px;
     color: #c2185b;
     margin: 0;
 }
 
 .wedding-info p {
-    font-size: 26px;
+    font-size: 22px;
     color: #e91e63;
     margin: 5px 0;
 }
