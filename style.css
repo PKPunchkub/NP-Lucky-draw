@@ -93,8 +93,8 @@ input {
 }
 
 button {
-    padding: 20px 30px;
-    font-size: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
     background-color: #ec407a; /* ชมพู button */
     color: white;
     border: none;
@@ -108,17 +108,17 @@ button:hover {
 }
 
 #message {
-    font-size: 22px;
+    font-size: 20px;
     color: #ad1457;
-    margin-top: 26px;
+    margin-top: 22px;
 }
 
 .winners-board {
-    margin-top: 26px;
+    margin-top: 22px;
 }
 
 .winners-board h2 {
-    font-size: 26px;
+    font-size: 22px;
     color: #c2185b;
 }
 
@@ -128,12 +128,12 @@ button:hover {
 }
 
 #winnersList li {
-    font-size: 26px;
+    font-size: 22px;
     color: #e91e63;
-    margin: 10px 0;
-    padding: 10px;
+    margin: 5px 0;
+    padding: 5px;
     background-color: #fce4ec;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 /* หัวใจลอยขึ้นมา */
