@@ -1,5 +1,5 @@
 body {
-    font-family: 'Amoresa', sans-serif;
+    font-family: 'Marykate', sans-serif;
     background-color: #ffebee; /* ชมพูอ่อนหวาน */
     display: flex;
     justify-content: center;
@@ -15,7 +15,7 @@ body {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5); /* ชมพู shadow */
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); /* ชมพู shadow */
     max-width: 600px;
     width: 100%;
     z-index: 1;
@@ -26,18 +26,18 @@ body {
 }
 
 .wedding-info h1 {
-    font-size: 26px;
+    font-size: 24px;
     color: #d81b60; /* ชมพูสด */
 }
 
 .wedding-info h2 {
-    font-size: 32px;
+    font-size: 36px;
     color: #c2185b;
     margin: 0;
 }
 
 .wedding-info p {
-    font-size: 22px;
+    font-size: 20px;
     color: #e91e63;
     margin: 5px 0;
 }
@@ -49,12 +49,12 @@ body {
 label {
     display: block;
     margin: 10px 0;
-    font-size: 22px;
+    font-size: 16px;
 }
 
 input {
     padding: 10px;
-    font-size: 22px;
+    font-size: 16px;
     width: 200px;
     margin-bottom: 20px;
     border: 1px solid #f48fb1; /* ชมพู border */
@@ -68,14 +68,14 @@ input {
 }
 
 .digit {
-    font-size: 60px;
+    font-size: 48px;
     font-weight: bold;
     color: #ff4081; /* ชมพูสดสำหรับ digits */
     background-color: #fff;
     border: 2px solid #f8bbd0;
     border-radius: 5px;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,13 +94,13 @@ input {
 
 button {
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 16px;
     background-color: #ec407a; /* ชมพู button */
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    margin: 10px;
+    margin: 5px;
 }
 
 button:hover {
@@ -108,17 +108,17 @@ button:hover {
 }
 
 #message {
-    font-size: 20px;
+    font-size: 18px;
     color: #ad1457;
-    margin-top: 22px;
+    margin-top: 20px;
 }
 
 .winners-board {
-    margin-top: 22px;
+    margin-top: 20px;
 }
 
 .winners-board h2 {
-    font-size: 22px;
+    font-size: 20px;
     color: #c2185b;
 }
 
@@ -128,7 +128,7 @@ button:hover {
 }
 
 #winnersList li {
-    font-size: 22px;
+    font-size: 18px;
     color: #e91e63;
     margin: 5px 0;
     padding: 5px;
