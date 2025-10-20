@@ -14,6 +14,7 @@ width: 100%; / ครอบคลุมทั้งหน้า /
 position: relative; / สำหรับ hearts-container */
 }
 .container {
+position: relative;
 text-align: center;
 background-color: rgba(255, 255, 255, 0.9);
 padding: 30px;
