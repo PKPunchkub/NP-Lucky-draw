@@ -1,17 +1,17 @@
-<artifact identifier="centered-container-style" type="text/css" title="style.css - แก้ตรงกลาง">
+<artifact identifier="fixed-centered-container" type="text/css" title="style.css - แก้ตรงกลางสมบูรณ์">
 // Itim Font สำหรับงานแต่ง Namkhing & Punch
 @import url('https://fonts.googleapis.com/css2?family=Itim:wght@400&display=swap');
 body {
 font-family: 'Itim', cursive;
 background-color: #ffebee;
 display: flex;
-justify-content: center; /* จัดกึ่งกลางแนวนอน /
-align-items: center; / จัดกึ่งกลางแนวตั้ง /
-height: 100vh; / ความสูงเต็มจอ /
+justify-content: center; /* กึ่งกลางแนวนอน /
+align-items: center; / กึ่งกลางแนวตั้ง /
+min-height: 100%; / ยืดตาม content /
 margin: 0;
-padding: 0; / ลบ padding เกิน */
-overflow: hidden;
-color: #ad1457;
+padding: 0; / ลบ padding ทุกด้าน /
+width: 100%; / ครอบคลุมทั้งหน้า /
+position: relative; / สำหรับ hearts-container */
 }
 .container {
 text-align: center;
@@ -20,11 +20,11 @@ padding: 30px;
 border-radius: 20px;
 box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
 max-width: 600px;
-width: 90%; /* ใช้ % เพื่อ responsive /
+width: 90%; /* Responsive /
 min-height: 80vh; / ความสูงขั้นต่ำ /
-display: flex;
-flex-direction: column;
-justify-content: center; / จัดกึ่งกลางใน container */
+display: block; / เปลี่ยนเป็น block แล้วใช้ margin auto /
+margin: 0 auto; / จัดกึ่งกลางแน่นอน /
+position: relative; / ควบคุมการจัดวาง */
 z-index: 1;
 }
 .wedding-info {
@@ -117,7 +117,7 @@ margin-top: 20px;
 }
 .winners-board {
 margin-top: 20px;
-flex-grow: 1; /* ขยายเพื่อกึ่งกลาง */
+flex-grow: 1;
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
@@ -129,8 +129,8 @@ color: #c2185b;
 #winnersList {
 list-style: none;
 padding: 0;
-overflow-y: auto; /* เพิ่ม scroll ถ้าเกิน /
-max-height: 200px; / จำกัดความสูง */
+overflow-y: auto;
+max-height: 200px;
 }
 #winnersList li {
 font-size: 20px;
@@ -150,6 +150,7 @@ width: 100%;
 height: 100%;
 overflow: hidden;
 pointer-events: none;
+z-index: 0; /* อยู่ใต้ container */
 }
 .heart-particle {
 position: absolute;
@@ -169,22 +170,22 @@ transform: translateY(-100vh) rotate(360deg);
 opacity: 0;
 }
 }
-/* Responsive Design /
+/* Responsive Design */
 @media (max-width: 600px) {
 .container {
-width: 95%; / ขยายสำหรับ mobile /
+width: 95%;
 padding: 20px;
 }
 .digit {
-font-size: 48px; / ลดขนาดเลข /
+font-size: 48px;
 width: 50px;
 height: 50px;
 }
 .wedding-info h2 {
-font-size: 32px; / ลดขนาดชื่อ /
+font-size: 32px;
 }
 button {
-padding: 10px 18px; / ลดขนาดปุ่ม */
+padding: 10px 18px;
 }
 }
 </artifact>
