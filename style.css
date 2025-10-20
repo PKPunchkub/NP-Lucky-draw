@@ -32,17 +32,20 @@ margin-bottom: 20px;
 }
 .wedding-info h1 {
 font-size: 28px;
+font-family: 'Itim', cursive;
 color: #d81b60;
 margin-bottom: 5px;
 }
 .wedding-info h2 {
 font-size: 42px;
+font-family: 'Itim', cursive;
 color: #c2185b;
 margin: 0;
 text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
 }
 .wedding-info p {
 font-size: 24px;
+font-family: 'Itim', cursive;
 color: #e91e63;
 margin: 5px 0;
 text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.2);
@@ -133,7 +136,6 @@ margin-bottom: 10px;
 #winnersListLeft, #winnersListRight {
 list-style: none;
 padding: 0;
-overflow-y: auto;
 max-height: 200px;
 }
 #winnersListLeft li, #winnersListRight li {
