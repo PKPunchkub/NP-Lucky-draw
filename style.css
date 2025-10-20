@@ -1,14 +1,15 @@
-<artifact identifier="complete-style-itim" type="text/css" title="style.css - Itim สมบูรณ์">
+<artifact identifier="centered-container-style" type="text/css" title="style.css - แก้ตรงกลาง">
 // Itim Font สำหรับงานแต่ง Namkhing & Punch
 @import url('https://fonts.googleapis.com/css2?family=Itim:wght@400&display=swap');
 body {
 font-family: 'Itim', cursive;
 background-color: #ffebee;
 display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
+justify-content: center; /* จัดกึ่งกลางแนวนอน /
+align-items: center; / จัดกึ่งกลางแนวตั้ง /
+height: 100vh; / ความสูงเต็มจอ /
 margin: 0;
+padding: 0; / ลบ padding เกิน */
 overflow: hidden;
 color: #ad1457;
 }
@@ -19,7 +20,11 @@ padding: 30px;
 border-radius: 20px;
 box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
 max-width: 600px;
-width: 100%;
+width: 90%; /* ใช้ % เพื่อ responsive /
+min-height: 80vh; / ความสูงขั้นต่ำ /
+display: flex;
+flex-direction: column;
+justify-content: center; / จัดกึ่งกลางใน container */
 z-index: 1;
 }
 .wedding-info {
@@ -112,6 +117,10 @@ margin-top: 20px;
 }
 .winners-board {
 margin-top: 20px;
+flex-grow: 1; /* ขยายเพื่อกึ่งกลาง */
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
 }
 .winners-board h2 {
 font-size: 24px;
@@ -120,6 +129,8 @@ color: #c2185b;
 #winnersList {
 list-style: none;
 padding: 0;
+overflow-y: auto; /* เพิ่ม scroll ถ้าเกิน /
+max-height: 200px; / จำกัดความสูง */
 }
 #winnersList li {
 font-size: 20px;
@@ -156,6 +167,24 @@ opacity: 0.7;
 100% {
 transform: translateY(-100vh) rotate(360deg);
 opacity: 0;
+}
+}
+/* Responsive Design /
+@media (max-width: 600px) {
+.container {
+width: 95%; / ขยายสำหรับ mobile /
+padding: 20px;
+}
+.digit {
+font-size: 48px; / ลดขนาดเลข /
+width: 50px;
+height: 50px;
+}
+.wedding-info h2 {
+font-size: 32px; / ลดขนาดชื่อ /
+}
+button {
+padding: 10px 18px; / ลดขนาดปุ่ม */
 }
 }
 </artifact>
