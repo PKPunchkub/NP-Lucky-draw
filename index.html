@@ -10,8 +10,8 @@
     <div class="hearts-container"></div>
     <div class="container">
         <div class="wedding-info">
+            <h1>งานแต่งงานของ</h1>
             <h2>Namkhing <span class="heart">❤️</span> Punch</h2>
-            <h2>Lucky Draw Game</h2>
             <p>15 Nov 2025</p>
         </div>
         <p>สุ่มเลข 001 ถึง Max เพื่อหาผู้โชคดี 10 คน!</p>
@@ -26,8 +26,14 @@
         <button id="restartBtn" style="display: none;">เริ่มใหม่</button>
         <p id="message"></p>
         <div class="winners-board">
-            <h2>บอร์ดผู้โชคดี</h2>
-            <ul id="winnersList"></ul>
+            <div class="winners-left">
+                <h2>ผู้โชคดี (1-5)</h2>
+                <ul id="winnersListLeft"></ul>
+            </div>
+            <div class="winners-right">
+                <h2>ผู้โชคดี (6-10)</h2>
+                <ul id="winnersListRight"></ul>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
