@@ -5,27 +5,26 @@ body {
 font-family: 'Itim', cursive;
 background-color: #ffebee;
 display: flex;
-justify-content: center; /* กึ่งกลางแนวนอน /
-align-items: center; / กึ่งกลางแนวตั้ง /
-min-height: 100%; / ยืดตาม content /
+justify-content: center; 
+align-items: center; 
+min-height: 100%; 
 margin: 0;
-padding: 0; / ลบ padding ทุกด้าน /
-width: 100%; / ครอบคลุมทั้งหน้า /
-position: relative; / สำหรับ hearts-container */
+padding: 0; 
+width: 100%; 
+position: relative; 
 }
 .container {
-position: relative;
 text-align: center;
 background-color: rgba(255, 255, 255, 0.9);
 padding: 30px;
 border-radius: 20px;
 box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
 max-width: 600px;
-width: 90%; /* Responsive /
-min-height: 80vh; / ความสูงขั้นต่ำ /
-display: block; / เปลี่ยนเป็น block แล้วใช้ margin auto /
-margin: 0 auto; / จัดกึ่งกลางแน่นอน /
-position: relative; / ควบคุมการจัดวาง */
+width: 90%; 
+min-height: 80vh; 
+display: block; 
+margin: 0 auto; 
+position: relative; 
 z-index: 1;
 }
 .wedding-info {
