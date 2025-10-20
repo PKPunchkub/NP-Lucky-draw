@@ -4,7 +4,8 @@ const digits = document.querySelectorAll('.digit');
 const drawBtn = document.getElementById('drawBtn');
 const restartBtn = document.getElementById('restartBtn');
 const message = document.getElementById('message');
-const winnersList = document.getElementById('winnersList');
+const winnersListLeft = document.getElementById('winnersListLeft');
+const winnersListRight = document.getElementById('winnersListRight');
 const heartsContainer = document.querySelector('.hearts-container');
 
 // ตัวแปรเก็บสถานะและเลขผู้โชคดี
@@ -18,7 +19,7 @@ function getRandomNumber(max) {
     let num;
     do {
         num = Math.floor(Math.random() * max) + 1;
-        num = num.toString().padStart(3, '0'); // แปลงเป็น 3 หลัก
+        num = num.toString().padStart(3, '0');
     } while (winners.includes(num));
     return num;
 }
@@ -48,7 +49,7 @@ function createHeart() {
     heart.classList.add('heart-particle');
     heart.textContent = '❤️';
     heart.style.left = `${Math.random() * 100}vw`;
-    heart.style.animationDuration = `${Math.random() * 3 + 3}s`; // 3-6 วินาที
+    heart.style.animationDuration = `${Math.random() * 3 + 3}s`;
     heartsContainer.appendChild(heart);
     setTimeout(() => heart.remove(), 6000);
 }
@@ -82,7 +83,7 @@ function startDraw() {
     message.textContent = `กำลังสุ่มผู้โชคดีคนที่ ${drawCount}...`;
 
     spinDigit(digits[0], digitsArray[0], 1000, () => {
-        createHeart(); // หัวใจลอยเมื่อหลักแรกหยุด
+        createHeart();
         spinDigit(digits[1], digitsArray[1], 1000, () => {
             createHeart();
             spinDigit(digits[2], digitsArray[2], 1000, () => {
@@ -90,7 +91,11 @@ function startDraw() {
                 message.textContent = `ผู้โชคดีคนที่ ${drawCount}: ${number}`;
                 const li = document.createElement('li');
                 li.textContent = `คนที่ ${drawCount}: ${number}`;
-                winnersList.appendChild(li);
+                if (drawCount <= 5) {
+                    winnersListLeft.appendChild(li);
+                } else {
+                    winnersListRight.appendChild(li);
+                }
                 isDrawing = false;
                 drawBtn.disabled = false;
                 if (drawCount === maxWinners) {
@@ -112,14 +117,15 @@ function restartGame() {
     drawBtn.style.display = 'inline';
     restartBtn.style.display = 'none';
     message.textContent = '';
-    winnersList.innerHTML = '';
+    winnersListLeft.innerHTML = '';
+    winnersListRight.innerHTML = '';
     digits.forEach(digit => {
         digit.textContent = '0';
         digit.classList.remove('spinning');
     });
 }
 
-// สร้างหัวใจลอยแบบสุ่มทุก 500ms เพื่อ background
+// สร้างหัวใจลอยแบบสุ่มทุก 500ms
 setInterval(createHeart, 500);
 
 // Event listeners
