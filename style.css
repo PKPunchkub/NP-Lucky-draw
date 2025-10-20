@@ -126,7 +126,7 @@ flex: 1;
 min-width: 0; 
 }
 .winners-left h2, .winners-right h2 {
-font-size: 24px;
+font-size: 20px;
 color: #c2185b;
 margin-bottom: 10px;
 }
@@ -137,7 +137,7 @@ overflow-y: auto;
 max-height: 200px;
 }
 #winnersListLeft li, #winnersListRight li {
-font-size: 20px;
+font-size: 18px;
 font-family: 'Itim', cursive;
 color: #e91e63;
 margin: 8px 0;
@@ -192,7 +192,7 @@ padding: 10px 18px;
 }
 .winners-board {
 flex-direction: column; 
-gap: 10px;
+gap: 8px;
 }
 .winners-left, .winners-right {
 width: 100%; 
