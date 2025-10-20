@@ -1,17 +1,17 @@
-<artifact identifier="fixed-centered-container" type="text/css" title="style.css - แก้ตรงกลางสมบูรณ์">
+<artifact identifier="split-winners-board" type="text/css" title="style.css - แบ่งบอร์ดซ้าย-ขวา">
 // Itim Font สำหรับงานแต่ง Namkhing & Punch
 @import url('https://fonts.googleapis.com/css2?family=Itim:wght@400&display=swap');
 body {
 font-family: 'Itim', cursive;
 background-color: #ffebee;
 display: flex;
-justify-content: center; 
-align-items: center; 
-min-height: 100%; 
+justify-content: center;
+align-items: center;
+min-height: 100%;
 margin: 0;
-padding: 0; 
-width: 100%; 
-position: relative; 
+padding: 0;
+width: 100%;
+position: relative;
 }
 .container {
 text-align: center;
@@ -19,12 +19,12 @@ background-color: rgba(255, 255, 255, 0.9);
 padding: 30px;
 border-radius: 20px;
 box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
-max-width: 600px;
-width: 90%; 
-min-height: 80vh; 
-display: block; 
-margin: 0 auto; 
-position: relative; 
+max-width: 800px;
+width: 90%;
+min-height: 80vh;
+display: block;
+margin: 0 auto;
+position: relative;
 z-index: 1;
 }
 .wedding-info {
@@ -117,22 +117,26 @@ margin-top: 20px;
 }
 .winners-board {
 margin-top: 20px;
-flex-grow: 1;
 display: flex;
-flex-direction: column;
-justify-content: flex-start;
+justify-content: space-between; 
+gap: 20px; 
 }
-.winners-board h2 {
+.winners-left, .winners-right {
+flex: 1; 
+min-width: 0; 
+}
+.winners-left h2, .winners-right h2 {
 font-size: 24px;
 color: #c2185b;
+margin-bottom: 10px;
 }
-#winnersList {
+#winnersListLeft, #winnersListRight {
 list-style: none;
 padding: 0;
 overflow-y: auto;
 max-height: 200px;
 }
-#winnersList li {
+#winnersListLeft li, #winnersListRight li {
 font-size: 20px;
 font-family: 'Itim', cursive;
 color: #e91e63;
@@ -150,7 +154,7 @@ width: 100%;
 height: 100%;
 overflow: hidden;
 pointer-events: none;
-z-index: 0; /* อยู่ใต้ container */
+z-index: 0;
 }
 .heart-particle {
 position: absolute;
@@ -170,7 +174,6 @@ transform: translateY(-100vh) rotate(360deg);
 opacity: 0;
 }
 }
-/* Responsive Design */
 @media (max-width: 600px) {
 .container {
 width: 95%;
@@ -186,6 +189,13 @@ font-size: 32px;
 }
 button {
 padding: 10px 18px;
+}
+.winners-board {
+flex-direction: column; 
+gap: 10px;
+}
+.winners-left, .winners-right {
+width: 100%; 
 }
 }
 </artifact>
