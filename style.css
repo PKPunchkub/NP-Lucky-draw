@@ -1,167 +1,161 @@
+<artifact identifier="complete-style-itim" type="text/css" title="style.css - Itim สมบูรณ์">
+// Itim Font สำหรับงานแต่ง Namkhing & Punch
+@import url('https://fonts.googleapis.com/css2?family=Itim:wght@400&display=swap');
 body {
-    font-family: 'Marykate', sans-serif;
-    background-color: #ffebee; /* ชมพูอ่อนหวาน */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    color: #ad1457; /* ชมพูเข้มสำหรับ text */
+font-family: 'Itim', cursive;
+background-color: #ffebee;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+overflow: hidden;
+color: #ad1457;
 }
-
 .container {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); /* ชมพู shadow */
-    max-width: 600px;
-    width: 100%;
-    z-index: 1;
+text-align: center;
+background-color: rgba(255, 255, 255, 0.9);
+padding: 30px;
+border-radius: 20px;
+box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+max-width: 600px;
+width: 100%;
+z-index: 1;
 }
-
 .wedding-info {
-    margin-bottom: 20px;
+margin-bottom: 20px;
 }
-
 .wedding-info h1 {
-    font-size: 24px;
-    color: #d81b60; /* ชมพูสด */
+font-size: 28px;
+color: #d81b60;
+margin-bottom: 5px;
 }
-
 .wedding-info h2 {
-    font-size: 36px;
-    color: #c2185b;
-    margin: 0;
+font-size: 42px;
+color: #c2185b;
+margin: 0;
+text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
 }
-
 .wedding-info p {
-    font-size: 20px;
-    color: #e91e63;
-    margin: 5px 0;
+font-size: 24px;
+color: #e91e63;
+margin: 5px 0;
+text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.2);
 }
-
 .heart {
-    color: #ff1744; /* หัวใจแดงสด */
+color: #ff1744;
+font-size: 48px;
 }
-
 label {
-    display: block;
-    margin: 10px 0;
-    font-size: 16px;
+display: block;
+margin: 10px 0;
+font-size: 18px;
 }
-
 input {
-    padding: 10px;
-    font-size: 16px;
-    width: 200px;
-    margin-bottom: 20px;
-    border: 1px solid #f48fb1; /* ชมพู border */
-    border-radius: 5px;
+padding: 12px;
+font-size: 18px;
+font-family: 'Itim', cursive;
+width: 200px;
+margin-bottom: 20px;
+border: 2px solid #f48fb1;
+border-radius: 10px;
+background-color: #fce4ec;
 }
-
 .digits-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+display: flex;
+justify-content: center;
+margin: 20px 0;
 }
-
 .digit {
-    font-size: 48px;
-    font-weight: bold;
-    color: #ff4081; /* ชมพูสดสำหรับ digits */
-    background-color: #fff;
-    border: 2px solid #f8bbd0;
-    border-radius: 5px;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 5px;
-    perspective: 1000px;
+font-size: 60px;
+font-weight: normal;
+font-family: 'Itim', cursive;
+color: #ff4081;
+background-color: #fff;
+border: 3px solid #f8bbd0;
+border-radius: 10px;
+width: 70px;
+height: 70px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 5px;
+perspective: 1000px;
 }
-
 .spinning {
-    animation: spin 0.1s linear infinite;
+animation: spin 0.1s linear infinite;
 }
-
 @keyframes spin {
-    0% { transform: rotateY(0deg); }
-    100% { transform: rotateY(360deg); }
+0% { transform: rotateY(0deg); }
+100% { transform: rotateY(360deg); }
 }
-
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ec407a; /* ชมพู button */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
+padding: 12px 24px;
+font-size: 18px;
+font-family: 'Itim', cursive;
+background-color: #ec407a;
+color: white;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+margin: 5px;
+box-shadow: 0 4px 8px rgba(255, 105, 180, 0.3);
 }
-
 button:hover {
-    background-color: #d81b60;
+background-color: #d81b60;
+transform: translateY(-2px);
 }
-
 #message {
-    font-size: 18px;
-    color: #ad1457;
-    margin-top: 20px;
+font-size: 20px;
+color: #ad1457;
+margin-top: 20px;
 }
-
 .winners-board {
-    margin-top: 20px;
+margin-top: 20px;
 }
-
 .winners-board h2 {
-    font-size: 20px;
-    color: #c2185b;
+font-size: 24px;
+color: #c2185b;
 }
-
 #winnersList {
-    list-style: none;
-    padding: 0;
+list-style: none;
+padding: 0;
 }
-
 #winnersList li {
-    font-size: 18px;
-    color: #e91e63;
-    margin: 5px 0;
-    padding: 5px;
-    background-color: #fce4ec;
-    border-radius: 5px;
+font-size: 20px;
+font-family: 'Itim', cursive;
+color: #e91e63;
+margin: 8px 0;
+padding: 10px;
+background-color: #fce4ec;
+border-radius: 10px;
+border-left: 5px solid #ff4081;
 }
-
-/* หัวใจลอยขึ้นมา */
 .hearts-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+overflow: hidden;
+pointer-events: none;
 }
-
 .heart-particle {
-    position: absolute;
-    font-size: 24px;
-    color: #ff1744;
-    animation: float 5s linear infinite;
-    opacity: 0.7;
+position: absolute;
+font-size: 24px;
+color: #ff1744;
+animation: float 5s linear infinite;
+opacity: 0.7;
+font-family: 'Itim', cursive;
 }
-
 @keyframes float {
-    0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0.7;
-    }
-    100% {
-        transform: translateY(-100vh) rotate(360deg);
-        opacity: 0;
-    }
+0% {
+transform: translateY(100vh) rotate(0deg);
+opacity: 0.7;
 }
+100% {
+transform: translateY(-100vh) rotate(360deg);
+opacity: 0;
+}
+}
+</artifact>
